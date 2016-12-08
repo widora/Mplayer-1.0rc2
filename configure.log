@@ -1,0 +1,2494 @@
+configuration: --host-cc=gcc --cc=mipsel-openwrt-linux-gcc --target=mips-linux --enable-static --disable-win32waveout --disable-dvdread --enable-fbdev --enable-libwma --disable-mp3lib --disable-mencoder --disable-live --enable-libavcodec_a --disable-ivtv --disable-tv --disable-tga --disable-pnm --disable-md5sum --disable-win32dll --disable-qtx --disable-xanim --disable-libmpeg2
+
+============ Checking for mipsel-openwrt-linux-gcc version ============
+Result is: 4.8.3, ok 
+##########################################
+
+============ Checking for host cc ============
+Result is: gcc 
+##########################################
+
+============ Checking for cross compilation ============
+
+int main() { return 0; }
+
+mipsel-openwrt-linux-gcc   -static    -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes 
+##########################################
+
+============ Checking for assembler support of -pipe option ============
+
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc   -static    -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -pipe
+
+
+Result is: yes 
+##########################################
+
+============ Checking for compiler support of named assembler arguments ============
+Result is: yes 
+##########################################
+
+============ Checking for .align is a power of two ============
+
+main() { asm (".align 3"); }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static    -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/mplayer-conf--11066.c:1:1: warning: return type defaults to 'int' [-Wreturn-type]
+ main() { asm (".align 3"); }
+ ^
+/tmp/mplayer-conf--11066.c: In function 'main':
+/tmp/mplayer-conf--11066.c:1:1: warning: control reaches end of non-void function [-Wreturn-type]
+ main() { asm (".align 3"); }
+ ^
+
+
+Result is: yes 
+##########################################
+
+============ Checking for -lposix ============
+
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static    -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lposix
+/home/midas/openwrt_widora/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.8.3/../../../../mipsel-openwrt-linux-uclibc/bin/ld: cannot find -lposix
+collect2: error: ld returned 1 exit status
+
+
+Result is: no 
+##########################################
+
+============ Checking for -lm ============
+
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static    -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lm
+
+
+Result is: yes 
+##########################################
+
+============ Checking for langinfo ============
+
+#include <langinfo.h>
+int main(void) { nl_langinfo(CODESET); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static    -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes 
+##########################################
+
+============ Checking for language ============
+Result is: using en (man pages: en ) 
+##########################################
+
+============ Checking for enable sighandler ============
+Result is: yes 
+##########################################
+
+============ Checking for runtime cpudetection ============
+Result is: no 
+##########################################
+
+============ Checking for restrict keyword ============
+
+void foo(char * restrict p); int main(){}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static    -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/mplayer-conf--11066.c:1:26: error: expected ';', ',' or ')' before 'p'
+ void foo(char * restrict p); int main(){}
+                          ^
+/tmp/mplayer-conf--11066.c: In function 'main':
+/tmp/mplayer-conf--11066.c:1:26: warning: control reaches end of non-void function [-Wreturn-type]
+ void foo(char * restrict p); int main(){}
+                          ^
+
+
+
+void foo(char * __restrict p); int main(){}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static    -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/mplayer-conf--11066.c: In function 'main':
+/tmp/mplayer-conf--11066.c:1:1: warning: control reaches end of non-void function [-Wreturn-type]
+ void foo(char * __restrict p); int main(){}
+ ^
+
+
+Result is: __restrict 
+##########################################
+
+============ Checking for __builtin_expect ============
+
+int foo (int a) {
+    a = __builtin_expect (a, 10);
+    return a == 10 ? 0 : 1;
+}
+int main() { return foo(10) && foo(0); }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static    -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes 
+##########################################
+
+============ Checking for kstat ============
+
+#include <kstat.h>
+int main(void) { (void) kstat_open(); (void) kstat_close(0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static    -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lkstat
+/tmp/mplayer-conf--11066.c:1:19: fatal error: kstat.h: No such file or directory
+ #include <kstat.h>
+                   ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for posix4 ============
+
+#include <time.h>
+int main(void) { (void) nanosleep(0, 0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static    -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lposix4
+/home/midas/openwrt_widora/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.8.3/../../../../mipsel-openwrt-linux-uclibc/bin/ld: cannot find -lposix4
+collect2: error: ld returned 1 exit status
+
+
+Result is: no 
+##########################################
+
+============ Checking for lrintf ============
+
+#include <math.h>
+int main(void) { long (*foo)(float); foo = lrintf; (void)(*foo)(0.0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static    -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -D_GNU_SOURCE -lm
+
+
+Result is: yes 
+##########################################
+
+============ Checking for mkstemp ============
+
+#include <stdlib.h>
+int main(void) { char a;  mkstemp(&a); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static    -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes 
+##########################################
+
+============ Checking for nanosleep ============
+
+#include <time.h>
+int main(void) { (void) nanosleep(0, 0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static    -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes 
+##########################################
+
+============ Checking for socklib ============
+
+#include <netdb.h>
+#include <sys/socket.h>
+int main(void) { (void) gethostbyname(0); (void) socket(AF_INET, SOCK_STREAM, 0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static    -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/cchTmyuz.o: In function `main':
+mplayer-conf--11066.c:(.text.startup+0x8): warning: gethostbyname is obsolescent, use getnameinfo() instead.
+
+
+
+#include <winsock2.h>
+int main(void) { (void) gethostbyname(0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static    -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lws2_32
+/tmp/mplayer-conf--11066.c:1:22: fatal error: winsock2.h: No such file or directory
+ #include <winsock2.h>
+                      ^
+compilation terminated.
+
+
+Result is: yes 
+##########################################
+
+============ Checking for inet_pton() ============
+
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+int main(void) { (void) inet_pton(0, 0, 0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static    -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes (using )
+##########################################
+
+============ Checking for network ============
+Result is: yes 
+##########################################
+
+============ Checking for inttypes.h (required) ============
+
+#include <inttypes.h>
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes 
+##########################################
+
+============ Checking for int_fastXY_t in inttypes.h ============
+
+#include <inttypes.h>
+int main(void) { 
+volatile int_fast16_t v= 0;
+return v; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes 
+##########################################
+
+============ Checking for word size ============
+
+#include <stdio.h>
+#include <sys/types.h>
+int main(void) { printf("%d\n", sizeof(size_t)*8); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is:  
+##########################################
+
+============ Checking for malloc.h ============
+
+#include <malloc.h>
+int main(void) { (void) malloc(0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes 
+##########################################
+
+============ Checking for memalign() ============
+
+#include <malloc.h>
+int main (void) { (void) memalign(64, sizeof(char)); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes 
+##########################################
+
+============ Checking for alloca.h ============
+
+#include <alloca.h>
+int main(void) { (void) alloca(0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+
+#include <alloca.h>
+int main(void) { (void) alloca(0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes 
+##########################################
+
+============ Checking for mman.h ============
+
+#include <sys/types.h>
+#include <sys/mman.h>
+int main(void) { (void) mmap(0, 0, 0, 0, 0, 0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes 
+##########################################
+
+
+#include <sys/types.h>
+#include <sys/mman.h>
+int main(void) { void *p = MAP_FAILED; return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/mplayer-conf--11066.c: In function 'main':
+/tmp/mplayer-conf--11066.c:3:24: warning: unused variable 'p' [-Wunused-variable]
+ int main(void) { void *p = MAP_FAILED; return 0; }
+                        ^
+
+
+============ Checking for dynamic loader ============
+
+#include <dlfcn.h>
+int main(void) { dlopen(0, 0); dlclose(0); dlsym(0, 0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/mplayer-conf--11066.c: In function 'main':
+/tmp/mplayer-conf--11066.c:2:1: warning: null argument where non-null required (argument 1) [-Wnonnull]
+ int main(void) { dlopen(0, 0); dlclose(0); dlsym(0, 0); return 0; }
+ ^
+/tmp/mplayer-conf--11066.c:2:1: warning: null argument where non-null required (argument 2) [-Wnonnull]
+/tmp/ccFQxOKQ.o: In function `main':
+mplayer-conf--11066.c:(.text.startup+0xc): undefined reference to `dlopen'
+mplayer-conf--11066.c:(.text.startup+0x14): undefined reference to `dlclose'
+mplayer-conf--11066.c:(.text.startup+0x20): undefined reference to `dlsym'
+collect2: error: ld returned 1 exit status
+
+
+
+#include <dlfcn.h>
+int main(void) { dlopen(0, 0); dlclose(0); dlsym(0, 0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -ldl
+/tmp/mplayer-conf--11066.c: In function 'main':
+/tmp/mplayer-conf--11066.c:2:1: warning: null argument where non-null required (argument 1) [-Wnonnull]
+ int main(void) { dlopen(0, 0); dlclose(0); dlsym(0, 0); return 0; }
+ ^
+/tmp/mplayer-conf--11066.c:2:1: warning: null argument where non-null required (argument 2) [-Wnonnull]
+/home/midas/openwrt_widora/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.8.3/../../../../mipsel-openwrt-linux-uclibc/lib/libdl.a(libdl.os): In function `_dl_parse_relocation_information':
+/home/midas/openwrt_widora/build_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/uClibc-0.9.33.2/./ldso/ldso/mips/elfinterp.c:252: undefined reference to `TLS_DTPREL_VALUE'
+/home/midas/openwrt_widora/build_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/uClibc-0.9.33.2/./ldso/ldso/mips/elfinterp.c:261: undefined reference to `TLS_TPREL_VALUE'
+/home/midas/openwrt_widora/build_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/uClibc-0.9.33.2/./ldso/ldso/mips/elfinterp.c:263: undefined reference to `TLS_TPREL_VALUE'
+collect2: error: ld returned 1 exit status
+
+
+Result is: no 
+##########################################
+
+============ Checking for dynamic a/v plugins support ============
+Result is: no 
+##########################################
+
+============ Checking for pthread ============
+
+#include <pthread.h>
+void* func(void *arg) { return arg; }
+int main(void) { pthread_t tid; return pthread_create (&tid, 0, func, 0) == 0 ? 0 : 1; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lpthreadGC2
+/home/midas/openwrt_widora/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.8.3/../../../../mipsel-openwrt-linux-uclibc/bin/ld: cannot find -lpthreadGC2
+collect2: error: ld returned 1 exit status
+
+
+
+#include <pthread.h>
+void* func(void *arg) { return arg; }
+int main(void) { pthread_t tid; return pthread_create (&tid, 0, func, 0) == 0 ? 0 : 1; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/cc0xTOG8.o: In function `main':
+mplayer-conf--11066.c:(.text.startup+0x18): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+
+
+
+#include <pthread.h>
+void* func(void *arg) { return arg; }
+int main(void) { pthread_t tid; return pthread_create (&tid, 0, func, 0) == 0 ? 0 : 1; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lpthread
+/home/midas/openwrt_widora/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.8.3/../../../../mipsel-openwrt-linux-uclibc/lib/libpthread.a(pthread_once.os): In function `clear_once_control':
+/home/midas/openwrt_widora/build_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/uClibc-0.9.33.2/libpthread/nptl/sysdeps/unix/sysv/linux/mips/pthread_once.c:33: undefined reference to `_Unwind_Resume'
+/home/midas/openwrt_widora/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.8.3/../../../../mipsel-openwrt-linux-uclibc/lib/libpthread.a(pthread_once.os):(.data.DW.ref.__gcc_personality_v0[DW.ref.__gcc_personality_v0]+0x0): undefined reference to `__gcc_personality_v0'
+collect2: error: ld returned 1 exit status
+
+
+
+#include <pthread.h>
+void* func(void *arg) { return arg; }
+int main(void) { pthread_t tid; return pthread_create (&tid, 0, func, 0) == 0 ? 0 : 1; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -pthread
+/home/midas/openwrt_widora/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.8.3/../../../../mipsel-openwrt-linux-uclibc/lib/libpthread.a(pthread_once.os): In function `clear_once_control':
+/home/midas/openwrt_widora/build_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/uClibc-0.9.33.2/libpthread/nptl/sysdeps/unix/sysv/linux/mips/pthread_once.c:33: undefined reference to `_Unwind_Resume'
+/home/midas/openwrt_widora/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.8.3/../../../../mipsel-openwrt-linux-uclibc/lib/libpthread.a(pthread_once.os):(.data.DW.ref.__gcc_personality_v0[DW.ref.__gcc_personality_v0]+0x0): undefined reference to `__gcc_personality_v0'
+collect2: error: ld returned 1 exit status
+
+
+Result is: no (v4l, vo_gl, ao_alsa, ao_nas, ao_macosx, win32 loader disabled)
+##########################################
+
+============ Checking for w32threads ============
+Result is: no 
+##########################################
+
+============ Checking for rpath ============
+Result is: no 
+##########################################
+
+============ Checking for iconv ============
+
+#include <stdio.h>
+#include <unistd.h>
+#include <iconv.h>
+#define INBUFSIZE 1024
+#define OUTBUFSIZE 4096
+
+char inbuffer[INBUFSIZE];
+char outbuffer[OUTBUFSIZE];
+
+int main(void) {
+  size_t numread;
+  iconv_t icdsc;
+  char *tocode="UTF-8";
+  char *fromcode="cp1250";
+  if ((icdsc = iconv_open (tocode, fromcode)) != (iconv_t)(-1)) {
+    while ((numread = read (0, inbuffer, INBUFSIZE))) {
+      char *iptr=inbuffer;
+      char *optr=outbuffer;
+      size_t inleft=numread;
+      size_t outleft=OUTBUFSIZE;
+      if (iconv(icdsc, (const char **)&iptr, &inleft, &optr, &outleft)
+          != (size_t)(-1)) {
+        write (1, outbuffer, OUTBUFSIZE - outleft);
+      }
+    }
+    if (iconv_close(icdsc) == -1)
+      ;
+  }
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lm
+/tmp/mplayer-conf--11066.c:3:19: fatal error: iconv.h: No such file or directory
+ #include <iconv.h>
+                   ^
+compilation terminated.
+
+
+
+#include <stdio.h>
+#include <unistd.h>
+#include <iconv.h>
+#define INBUFSIZE 1024
+#define OUTBUFSIZE 4096
+
+char inbuffer[INBUFSIZE];
+char outbuffer[OUTBUFSIZE];
+
+int main(void) {
+  size_t numread;
+  iconv_t icdsc;
+  char *tocode="UTF-8";
+  char *fromcode="cp1250";
+  if ((icdsc = iconv_open (tocode, fromcode)) != (iconv_t)(-1)) {
+    while ((numread = read (0, inbuffer, INBUFSIZE))) {
+      char *iptr=inbuffer;
+      char *optr=outbuffer;
+      size_t inleft=numread;
+      size_t outleft=OUTBUFSIZE;
+      if (iconv(icdsc, (const char **)&iptr, &inleft, &optr, &outleft)
+          != (size_t)(-1)) {
+        write (1, outbuffer, OUTBUFSIZE - outleft);
+      }
+    }
+    if (iconv_close(icdsc) == -1)
+      ;
+  }
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lm -liconv
+/tmp/mplayer-conf--11066.c:3:19: fatal error: iconv.h: No such file or directory
+ #include <iconv.h>
+                   ^
+compilation terminated.
+
+
+
+#include <stdio.h>
+#include <unistd.h>
+#include <iconv.h>
+#define INBUFSIZE 1024
+#define OUTBUFSIZE 4096
+
+char inbuffer[INBUFSIZE];
+char outbuffer[OUTBUFSIZE];
+
+int main(void) {
+  size_t numread;
+  iconv_t icdsc;
+  char *tocode="UTF-8";
+  char *fromcode="cp1250";
+  if ((icdsc = iconv_open (tocode, fromcode)) != (iconv_t)(-1)) {
+    while ((numread = read (0, inbuffer, INBUFSIZE))) {
+      char *iptr=inbuffer;
+      char *optr=outbuffer;
+      size_t inleft=numread;
+      size_t outleft=OUTBUFSIZE;
+      if (iconv(icdsc, (const char **)&iptr, &inleft, &optr, &outleft)
+          != (size_t)(-1)) {
+        write (1, outbuffer, OUTBUFSIZE - outleft);
+      }
+    }
+    if (iconv_close(icdsc) == -1)
+      ;
+  }
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lm -liconv
+/tmp/mplayer-conf--11066.c:3:19: fatal error: iconv.h: No such file or directory
+ #include <iconv.h>
+                   ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for soundcard.h ============
+
+#include <sys/soundcard.h>
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes (sys/soundcard.h)
+##########################################
+
+============ Checking for sys/dvdio.h ============
+
+#include <unistd.h>
+#include <sys/dvdio.h>
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/mplayer-conf--11066.c:2:23: fatal error: sys/dvdio.h: No such file or directory
+ #include <sys/dvdio.h>
+                       ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for sys/cdio.h ============
+
+#include <unistd.h>
+#include <sys/cdio.h>
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/mplayer-conf--11066.c:2:22: fatal error: sys/cdio.h: No such file or directory
+ #include <sys/cdio.h>
+                      ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for linux/cdrom.h ============
+
+#include <sys/types.h>
+#include <linux/cdrom.h>
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes 
+##########################################
+
+============ Checking for dvd.h ============
+
+#include <dvd.h>
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/mplayer-conf--11066.c:1:17: fatal error: dvd.h: No such file or directory
+ #include <dvd.h>
+                 ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for termcap ============
+
+int main(void) { tgetent(); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lncurses
+/tmp/mplayer-conf--11066.c: In function 'main':
+/tmp/mplayer-conf--11066.c:1:1: warning: implicit declaration of function 'tgetent' [-Wimplicit-function-declaration]
+ int main(void) { tgetent(); return 0; }
+ ^
+/home/midas/openwrt_widora/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.8.3/../../../../mipsel-openwrt-linux-uclibc/bin/ld: cannot find -lncurses
+collect2: error: ld returned 1 exit status
+
+
+
+int main(void) { tgetent(); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -ltinfo
+/tmp/mplayer-conf--11066.c: In function 'main':
+/tmp/mplayer-conf--11066.c:1:1: warning: implicit declaration of function 'tgetent' [-Wimplicit-function-declaration]
+ int main(void) { tgetent(); return 0; }
+ ^
+/home/midas/openwrt_widora/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.8.3/../../../../mipsel-openwrt-linux-uclibc/bin/ld: cannot find -ltinfo
+collect2: error: ld returned 1 exit status
+
+
+
+int main(void) { tgetent(); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -ltermcap
+/tmp/mplayer-conf--11066.c: In function 'main':
+/tmp/mplayer-conf--11066.c:1:1: warning: implicit declaration of function 'tgetent' [-Wimplicit-function-declaration]
+ int main(void) { tgetent(); return 0; }
+ ^
+/home/midas/openwrt_widora/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.8.3/../../../../mipsel-openwrt-linux-uclibc/bin/ld: cannot find -ltermcap
+collect2: error: ld returned 1 exit status
+
+
+Result is: no 
+##########################################
+
+============ Checking for termios ============
+
+#include <sys/termios.h>
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes (sys/termios.h)
+##########################################
+
+============ Checking for shm ============
+
+#include <sys/types.h>
+#include <sys/shm.h>
+int main(void) { shmget(0, 0, 0); shmat(0, 0, 0); shmctl(0, 0, 0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes 
+##########################################
+
+============ Checking for strsep() ============
+
+#include <string.h>
+int main (void) { char *s = "Hello, world!"; (void) strsep(&s, ","); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes 
+##########################################
+
+============ Checking for vsscanf() ============
+
+#include <stdarg.h>
+int main(void) { vsscanf(0, 0, 0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/mplayer-conf--11066.c: In function 'main':
+/tmp/mplayer-conf--11066.c:2:1: warning: implicit declaration of function 'vsscanf' [-Wimplicit-function-declaration]
+ int main(void) { vsscanf(0, 0, 0); return 0; }
+ ^
+/tmp/mplayer-conf--11066.c:2:1: warning: too many arguments for format [-Wformat-extra-args]
+
+
+Result is: yes 
+##########################################
+
+============ Checking for swab() ============
+
+#include <unistd.h>
+int main(void) { swab(0, 0, 0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/mplayer-conf--11066.c: In function 'main':
+/tmp/mplayer-conf--11066.c:2:1: warning: implicit declaration of function 'swab' [-Wimplicit-function-declaration]
+ int main(void) { swab(0, 0, 0); return 0; }
+ ^
+
+
+Result is: yes 
+##########################################
+
+============ Checking for POSIX select() ============
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <string.h>
+#include <sys/time.h>
+#include <unistd.h>
+int main(void) {int nfds = 1; fd_set readfds; struct timeval timeout; select(nfds,&readfds,NULL,NULL,&timeout); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes 
+##########################################
+
+============ Checking for gettimeofday() ============
+
+#include <stdio.h>
+#include <sys/time.h>
+int main(void) {struct timeval tv_start; gettimeofday(&tv_start, NULL); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes 
+##########################################
+
+============ Checking for glob() ============
+
+#include <stdio.h>
+#include <glob.h>
+int main(void) { glob_t gg; glob("filename",0,NULL,&gg); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes 
+##########################################
+
+============ Checking for setenv() ============
+
+#include <stdlib.h>
+int main (void){ setenv("","",0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes 
+##########################################
+
+============ Checking for sys/sysinfo.h ============
+
+#include <sys/sysinfo.h>
+int main(void) {
+  struct sysinfo s_info;
+  sysinfo(&s_info);
+  return 0;
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes 
+##########################################
+
+============ Checking for pkg-config ============
+Result is: yes 
+##########################################
+
+============ Checking for Samba support (libsmbclient) ============
+
+#include <libsmbclient.h>
+int main(void) { smbc_opendir("smb://"); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lsmbclient
+/tmp/mplayer-conf--11066.c:1:26: fatal error: libsmbclient.h: No such file or directory
+ #include <libsmbclient.h>
+                          ^
+compilation terminated.
+
+
+
+#include <libsmbclient.h>
+int main(void) { smbc_opendir("smb://"); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lsmbclient
+/tmp/mplayer-conf--11066.c:1:26: fatal error: libsmbclient.h: No such file or directory
+ #include <libsmbclient.h>
+                          ^
+compilation terminated.
+
+
+
+#include <libsmbclient.h>
+int main(void) { smbc_opendir("smb://"); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lsmbclient -lnsl
+/tmp/mplayer-conf--11066.c:1:26: fatal error: libsmbclient.h: No such file or directory
+ #include <libsmbclient.h>
+                          ^
+compilation terminated.
+
+
+
+#include <libsmbclient.h>
+int main(void) { smbc_opendir("smb://"); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lsmbclient -lssl -lnsl
+/tmp/mplayer-conf--11066.c:1:26: fatal error: libsmbclient.h: No such file or directory
+ #include <libsmbclient.h>
+                          ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for tdfxfb ============
+Result is: no 
+##########################################
+
+============ Checking for s3fb ============
+Result is: no 
+##########################################
+
+============ Checking for tdfxvid ============
+Result is: no 
+##########################################
+
+============ Checking for xvr100 ============
+
+#include <unistd.h>
+#include <sys/fbio.h>
+#include <sys/visual_io.h>
+int main(void) {
+struct vis_identifier ident;
+struct fbgattr attr;
+
+ioctl(0, VIS_GETIDENTIFIER, &ident);
+ioctl(0, FBIOGATTR, &attr);
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/mplayer-conf--11066.c:2:22: fatal error: sys/fbio.h: No such file or directory
+ #include <sys/fbio.h>
+                      ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for tga ============
+Result is: no 
+##########################################
+
+============ Checking for md5sum support ============
+Result is: no 
+##########################################
+
+============ Checking for bl ============
+Result is: no 
+##########################################
+
+============ Checking for DirectFB ============
+
+#include <directfb.h>
+int main(void) { IDirectFB *foo; DirectFBInit(0,0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -ldirectfb
+/tmp/mplayer-conf--11066.c:1:22: fatal error: directfb.h: No such file or directory
+ #include <directfb.h>
+                      ^
+compilation terminated.
+
+
+
+#include <directfb.h>
+int main(void) { IDirectFB *foo; DirectFBInit(0,0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -I/usr/local/include/directfb -ldirectfb
+/tmp/mplayer-conf--11066.c:1:22: fatal error: directfb.h: No such file or directory
+ #include <directfb.h>
+                      ^
+compilation terminated.
+
+
+
+#include <directfb.h>
+int main(void) { IDirectFB *foo; DirectFBInit(0,0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -I/usr/include/directfb -ldirectfb
+/tmp/mplayer-conf--11066.c:1:22: fatal error: directfb.h: No such file or directory
+ #include <directfb.h>
+                      ^
+compilation terminated.
+
+
+
+#include <directfb.h>
+int main(void) { IDirectFB *foo; DirectFBInit(0,0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -I/usr/local/include -ldirectfb
+/tmp/mplayer-conf--11066.c:1:22: fatal error: directfb.h: No such file or directory
+ #include <directfb.h>
+                      ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for X11 headers presence ============
+Result is: no (check if the dev(el) packages are installed)
+##########################################
+
+============ Checking for X11 ============
+Result is: no (check if the dev(el) packages are installed)
+##########################################
+
+============ Checking for DPMS ============
+Result is: no 
+##########################################
+
+============ Checking for Xv ============
+Result is: no 
+##########################################
+
+============ Checking for XvMC ============
+Result is: no 
+##########################################
+
+============ Checking for Xinerama ============
+Result is: no 
+##########################################
+
+============ Checking for Xxf86vm ============
+Result is: no 
+##########################################
+
+============ Checking for XF86keysym ============
+Result is: no 
+##########################################
+
+============ Checking for DGA ============
+Result is: no 
+##########################################
+
+============ Checking for 3dfx ============
+Result is: no 
+##########################################
+
+============ Checking for OpenGL ============
+Result is: no 
+##########################################
+
+============ Checking for VIDIX ============
+
+#include <vidix/vidix.h>
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lvidix
+/tmp/mplayer-conf--11066.c:1:25: fatal error: vidix/vidix.h: No such file or directory
+ #include <vidix/vidix.h>
+                         ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for /dev/mga_vid ============
+Result is: no 
+##########################################
+
+============ Checking for xmga ============
+Result is: no 
+##########################################
+
+============ Checking for GGI ============
+
+#include <ggi/ggi.h>
+int main(void) { ggiInit(); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lggi
+/tmp/mplayer-conf--11066.c:1:21: fatal error: ggi/ggi.h: No such file or directory
+ #include <ggi/ggi.h>
+                     ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for GGI extension: libggiwmh ============
+
+#include <ggi/ggi.h>
+#include <ggi/wmh.h>
+int main(void) { ggiInit(); ggiWmhInit(); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lggi -lggiwmh
+/tmp/mplayer-conf--11066.c:1:21: fatal error: ggi/ggi.h: No such file or directory
+ #include <ggi/ggi.h>
+                     ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for AA ============
+
+#include <aalib.h>
+extern struct aa_hardware_params aa_defparams;
+extern struct aa_renderparams aa_defrenderparams;
+int main(void) {
+aa_context *c;
+aa_renderparams *p;
+(void) aa_init(0, 0, 0);
+c = aa_autoinit(&aa_defparams);
+p = aa_getrenderparams();
+aa_autoinitkbd(c,0);
+return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -laa
+/tmp/mplayer-conf--11066.c:1:19: fatal error: aalib.h: No such file or directory
+ #include <aalib.h>
+                   ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for CACA ============
+./configure: 4389: ./configure: caca-config: not found
+Result is: no 
+##########################################
+
+============ Checking for SVGAlib ============
+
+#include <vga.h>
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lvga -lm
+/tmp/mplayer-conf--11066.c:1:17: fatal error: vga.h: No such file or directory
+ #include <vga.h>
+                 ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for FBDev ============
+Result is: yes 
+##########################################
+
+============ Checking for DVB ============
+
+#include <sys/poll.h>
+#include <sys/ioctl.h>
+#include <stdio.h>
+#include <time.h>
+#include <unistd.h>
+
+#include <ost/dmx.h>
+#include <ost/frontend.h>
+#include <ost/sec.h>
+#include <ost/video.h>
+#include <ost/audio.h>
+int main(void) {return 0;}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/mplayer-conf--11066.c:7:21: fatal error: ost/dmx.h: No such file or directory
+ #include <ost/dmx.h>
+                     ^
+compilation terminated.
+
+
+
+#include <sys/poll.h>
+#include <sys/ioctl.h>
+#include <stdio.h>
+#include <time.h>
+#include <unistd.h>
+
+#include <ost/dmx.h>
+#include <ost/frontend.h>
+#include <ost/sec.h>
+#include <ost/video.h>
+#include <ost/audio.h>
+int main(void) {return 0;}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -I/usr/src/DVB/ost/include
+/tmp/mplayer-conf--11066.c:7:21: fatal error: ost/dmx.h: No such file or directory
+ #include <ost/dmx.h>
+                     ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for DVB HEAD ============
+
+#include <sys/poll.h>
+#include <sys/ioctl.h>
+#include <stdio.h>
+#include <time.h>
+#include <unistd.h>
+
+#include <linux/dvb/dmx.h>
+#include <linux/dvb/frontend.h>
+#include <linux/dvb/video.h>
+#include <linux/dvb/audio.h>
+int main(void) {return 0;}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer  -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes 
+##########################################
+
+============ Checking for zr ============
+Result is: no 
+##########################################
+
+============ Checking for PNG support ============
+
+#include <png.h>
+#include <string.h>
+int main(void) {
+  printf("png.h : %s\n", PNG_LIBPNG_VER_STRING);
+  printf("libpng: %s\n", png_libpng_ver);
+  return (strcmp(PNG_LIBPNG_VER_STRING, png_libpng_ver));
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lpng -lz -lm
+/tmp/mplayer-conf--11066.c:1:17: fatal error: png.h: No such file or directory
+ #include <png.h>
+                 ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for JPEG support ============
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <setjmp.h>
+#include <string.h>
+#include <jpeglib.h>
+int main(void) {
+  return 0;
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -ljpeg -lm
+/tmp/mplayer-conf--11066.c:5:21: fatal error: jpeglib.h: No such file or directory
+ #include <jpeglib.h>
+                     ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for PNM support ============
+Result is: no 
+##########################################
+
+============ Checking for GIF support ============
+
+#include <gif_lib.h>
+int main(void) {
+  return 0;
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lungif
+/tmp/mplayer-conf--11066.c:1:21: fatal error: gif_lib.h: No such file or directory
+ #include <gif_lib.h>
+                     ^
+compilation terminated.
+
+
+
+#include <gif_lib.h>
+int main(void) {
+  return 0;
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lgif
+/tmp/mplayer-conf--11066.c:1:21: fatal error: gif_lib.h: No such file or directory
+ #include <gif_lib.h>
+                     ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for VESA support ============
+
+#include <vbe.h>
+int main(void) { vbeVersion(); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lvbe -llrmi
+/tmp/mplayer-conf--11066.c:1:17: fatal error: vbe.h: No such file or directory
+ #include <vbe.h>
+                 ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for SDL ============
+./configure: 4755: ./configure: sdl-config: not found
+./configure: 4757: ./configure: sdl11-config: not found
+Result is: no 
+##########################################
+
+============ Checking for NAS ============
+Result is: no 
+##########################################
+
+============ Checking for DXR2 ============
+
+#include <dxr2ioctl.h>
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/mplayer-conf--11066.c:1:23: fatal error: dxr2ioctl.h: No such file or directory
+ #include <dxr2ioctl.h>
+                       ^
+compilation terminated.
+
+
+
+#include <dxr2ioctl.h>
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -I/usr/local/include/dxr2
+/tmp/mplayer-conf--11066.c:1:23: fatal error: dxr2ioctl.h: No such file or directory
+ #include <dxr2ioctl.h>
+                       ^
+compilation terminated.
+
+
+
+#include <dxr2ioctl.h>
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -I/usr/include/dxr2
+/tmp/mplayer-conf--11066.c:1:23: fatal error: dxr2ioctl.h: No such file or directory
+ #include <dxr2ioctl.h>
+                       ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for DXR3/H+ ============
+
+#include <linux/em8300.h>
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/mplayer-conf--11066.c:1:26: fatal error: linux/em8300.h: No such file or directory
+ #include <linux/em8300.h>
+                          ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for IVTV TV-Out ============
+Result is: no 
+##########################################
+
+============ Checking for V4L2 MPEG Decoder ============
+
+#include <stdlib.h>
+#include <inttypes.h>
+#include <linux/types.h>
+#include <linux/videodev2.h>
+#include <linux/version.h>
+int main(void) {
+#if LINUX_VERSION_CODE < KERNEL_VERSION(2,6,22)
+#error kernel headers too old, need 2.6.22
+  bad_kernel_version();
+#endif
+  struct v4l2_ext_controls ctrls;
+  ctrls.ctrl_class = V4L2_CTRL_CLASS_MPEG;
+  return 0;
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/mplayer-conf--11066.c: In function 'main':
+/tmp/mplayer-conf--11066.c:11:28: warning: variable 'ctrls' set but not used [-Wunused-but-set-variable]
+   struct v4l2_ext_controls ctrls;
+                            ^
+
+
+Result is: yes 
+##########################################
+
+============ Checking for OSS Audio ============
+
+#include <sys/ioctl.h>
+#include <sys/soundcard.h>
+int main(void) { int arg = SNDCTL_DSP_SETFRAGMENT; return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/mplayer-conf--11066.c: In function 'main':
+/tmp/mplayer-conf--11066.c:3:22: warning: unused variable 'arg' [-Wunused-variable]
+ int main(void) { int arg = SNDCTL_DSP_SETFRAGMENT; return 0; }
+                      ^
+
+
+
+#include <sys/ioctl.h>
+#include <sys/soundcard.h>
+#ifdef OPEN_SOUND_SYSTEM
+int main(void) { return 0; }
+#else
+#error Not the real thing
+#endif
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes 
+##########################################
+
+============ Checking for aRts ============
+./configure: 5046: ./configure: artsc-config: not found
+Result is: no 
+##########################################
+
+============ Checking for EsounD ============
+./configure: 5072: ./configure: esd-config: not found
+Result is: no 
+##########################################
+
+============ Checking for Polyp ============
+Result is: no 
+##########################################
+
+============ Checking for JACK ============
+
+#include <jack/jack.h>
+int main(void) { jack_client_new("test"); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -ljack
+/tmp/mplayer-conf--11066.c:1:23: fatal error: jack/jack.h: No such file or directory
+ #include <jack/jack.h>
+                       ^
+compilation terminated.
+
+
+
+#include <jack/jack.h>
+int main(void) { jack_client_new("test"); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/mplayer-conf--11066.c:1:23: fatal error: jack/jack.h: No such file or directory
+ #include <jack/jack.h>
+                       ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for OpenAL ============
+
+#ifdef OPENAL_AL_H
+#include <OpenAL/al.h>
+#else
+#include <AL/al.h>
+#endif
+int main(void) {
+  alSourceQueueBuffers(0, 0, 0);
+//  alGetSourcei(0, AL_SAMPLE_OFFSET, 0);
+  return 0;
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lopenal
+/tmp/mplayer-conf--11066.c:4:19: fatal error: AL/al.h: No such file or directory
+ #include <AL/al.h>
+                   ^
+compilation terminated.
+
+
+
+#ifdef OPENAL_AL_H
+#include <OpenAL/al.h>
+#else
+#include <AL/al.h>
+#endif
+int main(void) {
+  alSourceQueueBuffers(0, 0, 0);
+//  alGetSourcei(0, AL_SAMPLE_OFFSET, 0);
+  return 0;
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -DOPENAL_AL_H=1 -lopenal
+/tmp/mplayer-conf--11066.c:2:23: fatal error: OpenAL/al.h: No such file or directory
+ #include <OpenAL/al.h>
+                       ^
+compilation terminated.
+
+
+
+#ifdef OPENAL_AL_H
+#include <OpenAL/al.h>
+#else
+#include <AL/al.h>
+#endif
+int main(void) {
+  alSourceQueueBuffers(0, 0, 0);
+//  alGetSourcei(0, AL_SAMPLE_OFFSET, 0);
+  return 0;
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -framework OpenAL
+mipsel-openwrt-linux-gcc: error: OpenAL: No such file or directory
+mipsel-openwrt-linux-gcc: error: unrecognized command line option '-framework'
+
+
+
+#ifdef OPENAL_AL_H
+#include <OpenAL/al.h>
+#else
+#include <AL/al.h>
+#endif
+int main(void) {
+  alSourceQueueBuffers(0, 0, 0);
+//  alGetSourcei(0, AL_SAMPLE_OFFSET, 0);
+  return 0;
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -DOPENAL_AL_H=1 -framework OpenAL
+mipsel-openwrt-linux-gcc: error: OpenAL: No such file or directory
+mipsel-openwrt-linux-gcc: error: unrecognized command line option '-framework'
+
+
+Result is: no 
+##########################################
+
+============ Checking for ALSA audio ============
+
+#include <sys/asoundlib.h>
+#if !((SND_LIB_MAJOR == 0) && (SND_LIB_MINOR == 5))
+#error "alsa version != 0.5.x"
+#endif
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lasound
+/tmp/mplayer-conf--11066.c:1:27: fatal error: sys/asoundlib.h: No such file or directory
+ #include <sys/asoundlib.h>
+                           ^
+compilation terminated.
+
+
+
+#include <sys/asoundlib.h>
+#if !((SND_LIB_MAJOR == 0) && (SND_LIB_MINOR == 9))
+#error "alsa version != 0.9.x"
+#endif
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lasound
+/tmp/mplayer-conf--11066.c:1:27: fatal error: sys/asoundlib.h: No such file or directory
+ #include <sys/asoundlib.h>
+                           ^
+compilation terminated.
+
+
+
+#include <alsa/asoundlib.h>
+#if !((SND_LIB_MAJOR == 0) && (SND_LIB_MINOR == 9))
+#error "alsa version != 0.9.x"
+#endif
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lasound
+/tmp/mplayer-conf--11066.c:1:28: fatal error: alsa/asoundlib.h: No such file or directory
+ #include <alsa/asoundlib.h>
+                            ^
+compilation terminated.
+
+
+
+#include <sys/asoundlib.h>
+#if !((SND_LIB_MAJOR == 1) && (SND_LIB_MINOR == 0))
+#error "alsa version != 1.0.x"
+#endif
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lasound
+/tmp/mplayer-conf--11066.c:1:27: fatal error: sys/asoundlib.h: No such file or directory
+ #include <sys/asoundlib.h>
+                           ^
+compilation terminated.
+
+
+
+#include <alsa/asoundlib.h>
+#if !((SND_LIB_MAJOR == 1) && (SND_LIB_MINOR == 0))
+#error "alsa version != 1.0.x"
+#endif
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lasound
+/tmp/mplayer-conf--11066.c:1:28: fatal error: alsa/asoundlib.h: No such file or directory
+ #include <alsa/asoundlib.h>
+                            ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for Sun audio ============
+
+#include <sys/types.h>
+#include <sys/audioio.h>
+int main(void) { audio_info_t info; AUDIO_INITINFO(&info); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/mplayer-conf--11066.c:2:25: fatal error: sys/audioio.h: No such file or directory
+ #include <sys/audioio.h>
+                         ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for VCD support ============
+Result is: yes 
+##########################################
+
+============ Checking for dvdread ============
+Result is: yes (internal)
+##########################################
+
+============ Checking for internal libdvdcss ============
+Result is: yes 
+##########################################
+
+============ Checking for cdparanoia ============
+
+#include <cdda_interface.h>
+#include <cdda_paranoia.h>
+// This need a better test. How ?
+int main(void) {
+    void *test = cdda_verbose_set;
+    return test == (void *)1;
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lcdda_interface -lcdda_paranoia -lm
+/tmp/mplayer-conf--11066.c:1:28: fatal error: cdda_interface.h: No such file or directory
+ #include <cdda_interface.h>
+                            ^
+compilation terminated.
+
+
+
+#include <cdda_interface.h>
+#include <cdda_paranoia.h>
+// This need a better test. How ?
+int main(void) {
+    void *test = cdda_verbose_set;
+    return test == (void *)1;
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -I/usr/include/cdda -lcdda_interface -lcdda_paranoia -lm
+/tmp/mplayer-conf--11066.c:1:28: fatal error: cdda_interface.h: No such file or directory
+ #include <cdda_interface.h>
+                            ^
+compilation terminated.
+
+
+
+#include <cdda_interface.h>
+#include <cdda_paranoia.h>
+// This need a better test. How ?
+int main(void) {
+    void *test = cdda_verbose_set;
+    return test == (void *)1;
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -I/usr/local/include/cdda -lcdda_interface -lcdda_paranoia -lm
+/tmp/mplayer-conf--11066.c:1:28: fatal error: cdda_interface.h: No such file or directory
+ #include <cdda_interface.h>
+                            ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for libcdio ============
+
+#include <stdio.h>
+#include <cdio/version.h>
+#include <cdio/cdda.h>
+#include <cdio/paranoia.h>
+int main()
+{
+    void *test = cdda_verbose_set;
+    printf("%s\n", CDIO_VERSION);
+    return test == (void *)1;
+    
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lcdio_cdda -lcdio -lcdio_paranoia -lm
+/tmp/mplayer-conf--11066.c:2:26: fatal error: cdio/version.h: No such file or directory
+ #include <cdio/version.h>
+                          ^
+compilation terminated.
+
+
+
+#include <stdio.h>
+#include <cdio/version.h>
+#include <cdio/cdda.h>
+#include <cdio/paranoia.h>
+int main()
+{
+    void *test = cdda_verbose_set;
+    printf("%s\n", CDIO_VERSION);
+    return test == (void *)1;
+    
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lcdio_cdda -lcdio -lcdio_paranoia -lwinmm -lm
+/tmp/mplayer-conf--11066.c:2:26: fatal error: cdio/version.h: No such file or directory
+ #include <cdio/version.h>
+                          ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for bitmap font support ============
+Result is: yes 
+##########################################
+
+============ Checking for freetype >= 2.0.9 ============
+Result is: no (iconv support needed)
+##########################################
+
+============ Checking for fontconfig ============
+Result is: no (freetype support needed)
+##########################################
+
+============ Checking for SSA/ASS support ============
+Result is: no (FreeType support needed)
+##########################################
+
+============ Checking for fribidi with charsets ============
+Result is: no 
+##########################################
+
+============ Checking for ENCA ============
+
+#include <enca.h>
+int main()
+{
+    const char **langs;
+    size_t langcnt;
+    langs = enca_get_languages(&langcnt);
+    return 0;
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lenca -lm
+/tmp/mplayer-conf--11066.c:1:18: fatal error: enca.h: No such file or directory
+ #include <enca.h>
+                  ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for zlib ============
+
+#include <zlib.h>
+int main(void) { (void) inflate(0, Z_NO_FLUSH); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lz
+/tmp/mplayer-conf--11066.c:1:18: fatal error: zlib.h: No such file or directory
+ #include <zlib.h>
+                  ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for RTC ============
+
+#include <sys/ioctl.h>
+#ifdef __linux__
+#include <linux/rtc.h>
+#else
+#include <rtc.h>
+#define RTC_PIE_ON RTCIO_PIE_ON
+#endif
+int main(void) { return RTC_PIE_ON; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: yes 
+##########################################
+
+============ Checking for liblzo2 support ============
+
+#include <lzo/lzo1x.h>
+int main(void) { lzo_init();return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -llzo2
+/tmp/mplayer-conf--11066.c:1:23: fatal error: lzo/lzo1x.h: No such file or directory
+ #include <lzo/lzo1x.h>
+                       ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for mad support ============
+
+#include <mad.h>
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lmad
+/tmp/mplayer-conf--11066.c:1:17: fatal error: mad.h: No such file or directory
+ #include <mad.h>
+                 ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for Twolame ============
+
+#include <twolame.h>
+int main(void) { twolame_init(); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -ltwolame -lm
+/tmp/mplayer-conf--11066.c:1:21: fatal error: twolame.h: No such file or directory
+ #include <twolame.h>
+                     ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for Toolame ============
+
+#include <toolame.h>
+int main(void) { toolame_init(); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -ltoolame -lm
+/tmp/mplayer-conf--11066.c:1:21: fatal error: toolame.h: No such file or directory
+ #include <toolame.h>
+                     ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for OggVorbis support ============
+Result is: yes (internal Tremor)
+##########################################
+
+============ Checking for libspeex (version >= 1.1 required) ============
+
+#include <speex/speex.h>
+int main(void) {
+  SpeexBits bits;
+  void *dec;
+  speex_decode_int(dec, &bits, dec);
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lspeex -lm
+/tmp/mplayer-conf--11066.c:1:25: fatal error: speex/speex.h: No such file or directory
+ #include <speex/speex.h>
+                         ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for OggTheora support ============
+
+#include <theora/theora.h>
+#include <string.h>
+int main(void) 
+{ 
+  /* theora is in flux, make sure that all interface routines and 
+   * datatypes exist and work the way we expect it, so we don't break
+   * mplayer */
+  ogg_packet op;
+  theora_comment tc;
+  theora_info inf;
+  theora_state st;
+  yuv_buffer yuv;
+  int r;
+  double t;
+
+  theora_info_init (&inf);
+  theora_comment_init (&tc);
+ 
+  return 0;
+
+  /* we don't want to execute this kind of nonsense; just for making sure
+   * that compilation works... */
+  memset(&op, 0, sizeof(op));
+  r = theora_decode_header (&inf, &tc, &op);
+  r = theora_decode_init (&st, &inf);
+  t = theora_granule_time (&st, op.granulepos);
+  r = theora_decode_packetin (&st, &op);
+  r = theora_decode_YUVout (&st, &yuv);
+  theora_clear (&st);
+
+  return 0;
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/mplayer-conf--11066.c:1:27: fatal error: theora/theora.h: No such file or directory
+ #include <theora/theora.h>
+                           ^
+compilation terminated.
+
+
+
+#include <theora/theora.h>
+#include <string.h>
+int main(void) 
+{ 
+  /* theora is in flux, make sure that all interface routines and 
+   * datatypes exist and work the way we expect it, so we don't break
+   * mplayer */
+  ogg_packet op;
+  theora_comment tc;
+  theora_info inf;
+  theora_state st;
+  yuv_buffer yuv;
+  int r;
+  double t;
+
+  theora_info_init (&inf);
+  theora_comment_init (&tc);
+ 
+  return 0;
+
+  /* we don't want to execute this kind of nonsense; just for making sure
+   * that compilation works... */
+  memset(&op, 0, sizeof(op));
+  r = theora_decode_header (&inf, &tc, &op);
+  r = theora_decode_init (&st, &inf);
+  t = theora_granule_time (&st, op.granulepos);
+  r = theora_decode_packetin (&st, &op);
+  r = theora_decode_YUVout (&st, &yuv);
+  theora_clear (&st);
+
+  return 0;
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -ltheora -logg
+/tmp/mplayer-conf--11066.c:1:27: fatal error: theora/theora.h: No such file or directory
+ #include <theora/theora.h>
+                           ^
+compilation terminated.
+
+
+
+#include <theora/theora.h>
+#include <string.h>
+int main(void) 
+{ 
+  /* theora is in flux, make sure that all interface routines and 
+   * datatypes exist and work the way we expect it, so we don't break
+   * mplayer */
+  ogg_packet op;
+  theora_comment tc;
+  theora_info inf;
+  theora_state st;
+  yuv_buffer yuv;
+  int r;
+  double t;
+
+  theora_info_init (&inf);
+  theora_comment_init (&tc);
+ 
+  return 0;
+
+  /* we don't want to execute this kind of nonsense; just for making sure
+   * that compilation works... */
+  memset(&op, 0, sizeof(op));
+  r = theora_decode_header (&inf, &tc, &op);
+  r = theora_decode_init (&st, &inf);
+  t = theora_granule_time (&st, op.granulepos);
+  r = theora_decode_packetin (&st, &op);
+  r = theora_decode_YUVout (&st, &yuv);
+  theora_clear (&st);
+
+  return 0;
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -I. tremor/bitwise.c
+/tmp/mplayer-conf--11066.c:1:27: fatal error: theora/theora.h: No such file or directory
+ #include <theora/theora.h>
+                           ^
+compilation terminated.
+
+
+
+#include <theora/theora.h>
+#include <string.h>
+int main(void) 
+{ 
+  /* theora is in flux, make sure that all interface routines and 
+   * datatypes exist and work the way we expect it, so we don't break
+   * mplayer */
+  ogg_packet op;
+  theora_comment tc;
+  theora_info inf;
+  theora_state st;
+  yuv_buffer yuv;
+  int r;
+  double t;
+
+  theora_info_init (&inf);
+  theora_comment_init (&tc);
+ 
+  return 0;
+
+  /* we don't want to execute this kind of nonsense; just for making sure
+   * that compilation works... */
+  memset(&op, 0, sizeof(op));
+  r = theora_decode_header (&inf, &tc, &op);
+  r = theora_decode_init (&st, &inf);
+  t = theora_granule_time (&st, op.granulepos);
+  r = theora_decode_packetin (&st, &op);
+  r = theora_decode_YUVout (&st, &yuv);
+  theora_clear (&st);
+
+  return 0;
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -I. tremor/bitwise.c -ltheora -logg
+/tmp/mplayer-conf--11066.c:1:27: fatal error: theora/theora.h: No such file or directory
+ #include <theora/theora.h>
+                           ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for internal mp3lib support ============
+Result is: no 
+##########################################
+
+============ Checking for internal liba52 support ============
+Result is: yes 
+##########################################
+
+============ Checking for libdca support ============
+
+#include <inttypes.h>
+#include <dts.h>
+int main(void) { dts_init (0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -ldts -lm
+/tmp/mplayer-conf--11066.c:2:17: fatal error: dts.h: No such file or directory
+ #include <dts.h>
+                 ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for internal libmpeg2 support ============
+Result is: no 
+##########################################
+
+============ Checking for libmpcdec (musepack, version >= 1.2.1 required) ============
+
+#include <mpcdec/mpcdec.h>
+int main(void) {
+  mpc_streaminfo info;
+  mpc_decoder decoder;
+  mpc_decoder_set_streaminfo(&decoder, &info);
+  mpc_decoder_decode_frame(&decoder, NULL, 0, NULL);
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lmpcdec -lm
+/tmp/mplayer-conf--11066.c:1:27: fatal error: mpcdec/mpcdec.h: No such file or directory
+ #include <mpcdec/mpcdec.h>
+                           ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for FAAC (AAC encoder) support ============
+
+#include <inttypes.h> 
+#include <faac.h>
+int main(void) { unsigned long x, y; faacEncOpen(48000, 2, &x, &y); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -O4 -lfaac -lm
+/tmp/mplayer-conf--11066.c:2:18: fatal error: faac.h: No such file or directory
+ #include <faac.h>
+                  ^
+compilation terminated.
+
+
+
+#include <inttypes.h> 
+#include <faac.h>
+int main(void) { unsigned long x, y; faacEncOpen(48000, 2, &x, &y); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -O4 -lfaac -lmp4v2 -lstdc++ -lm
+/tmp/mplayer-conf--11066.c:2:18: fatal error: faac.h: No such file or directory
+ #include <faac.h>
+                  ^
+compilation terminated.
+
+
+Result is: no (in libavcodec: ) 
+##########################################
+
+============ Checking for FAAD2 (AAC) support ============
+Result is: yes (internal floating-point)
+##########################################
+
+============ Checking for LADSPA plugin support ============
+
+#include <stdio.h>
+#include <ladspa.h>
+int main(void) {
+const LADSPA_Descriptor *ld = NULL;
+return 0;
+}
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/mplayer-conf--11066.c:2:20: fatal error: ladspa.h: No such file or directory
+ #include <ladspa.h>
+                    ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for Win32 codecs ============
+Result is: no 
+##########################################
+
+============ Checking for XAnim codecs ============
+Result is: no 
+##########################################
+
+============ Checking for RealPlayer codecs ============
+Result is: no (dynamic loader support needed)
+##########################################
+
+============ Checking for QuickTime codecs ============
+Result is: no 
+##########################################
+
+============ Checking for Nemesi Streaming Media libraries ============
+Result is: no 
+##########################################
+
+============ Checking for LIVE555 Streaming Media libraries ============
+Result is: no 
+##########################################
+
+============ Checking for FFmpeg libavutil ============
+Result is: yes (static)
+##########################################
+
+============ Checking for FFmpeg libavcodec ============
+
+#include <ffmpeg/avcodec.h>
+int main(void) { avcodec_find_encoder_by_name(""); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lavcodec -lm
+/tmp/mplayer-conf--11066.c:1:28: fatal error: ffmpeg/avcodec.h: No such file or directory
+ #include <ffmpeg/avcodec.h>
+                            ^
+compilation terminated.
+
+
+Result is: yes (libavcodec.so is discouraged over static libavcodec)
+##########################################
+
+============ Checking for FFmpeg libavformat ============
+Result is: yes (static)
+##########################################
+
+============ Checking for FFmpeg libpostproc ============
+Result is: yes (static)
+##########################################
+
+============ Checking for libamr narrowband ============
+
+#include <amrnb/interf_dec.h>
+int main(void) { Speech_Decode_Frame_init(); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lamrnb
+/tmp/mplayer-conf--11066.c:1:30: fatal error: amrnb/interf_dec.h: No such file or directory
+ #include <amrnb/interf_dec.h>
+                              ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for libamr wideband ============
+
+#include <amrwb/dec_if.h>
+int main(void) { D_IF_init(); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lamrwb
+/tmp/mplayer-conf--11066.c:1:26: fatal error: amrwb/dec_if.h: No such file or directory
+ #include <amrwb/dec_if.h>
+                          ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for libdv-0.9.5+ ============
+
+#include <libdv/dv.h>
+int main(void) { dv_encoder_t* enc=dv_encoder_new(1,1,1); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -ldv -lm
+/tmp/mplayer-conf--11066.c:1:22: fatal error: libdv/dv.h: No such file or directory
+ #include <libdv/dv.h>
+                      ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for XviD ============
+
+#include <xvid.h>
+int main(void) { xvid_global(0, 0, 0, 0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lxvidcore -lm
+/tmp/mplayer-conf--11066.c:1:18: fatal error: xvid.h: No such file or directory
+ #include <xvid.h>
+                  ^
+compilation terminated.
+
+
+
+#include <xvid.h>
+int main(void) { xvid_global(0, 0, 0, 0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lxvidcore -lm
+/tmp/mplayer-conf--11066.c:1:18: fatal error: xvid.h: No such file or directory
+ #include <xvid.h>
+                  ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for x264 ============
+
+#include <inttypes.h>
+#include <x264.h>
+#if X264_BUILD < 53
+#error We do not support old versions of x264. Get the latest from SVN.
+#endif
+int main(void) { x264_encoder_open((void*)0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lx264
+/tmp/mplayer-conf--11066.c:2:18: fatal error: x264.h: No such file or directory
+ #include <x264.h>
+                  ^
+compilation terminated.
+
+
+
+#include <inttypes.h>
+#include <x264.h>
+#if X264_BUILD < 53
+#error We do not support old versions of x264. Get the latest from SVN.
+#endif
+int main(void) { x264_encoder_open((void*)0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lx264 -lm
+/tmp/mplayer-conf--11066.c:2:18: fatal error: x264.h: No such file or directory
+ #include <x264.h>
+                  ^
+compilation terminated.
+
+
+Result is: no (in libavcodec: no) 
+##########################################
+
+============ Checking for libnut ============
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <inttypes.h>
+#include <libnut.h>
+int main(void) { (void)nut_error(0); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lnut
+/tmp/mplayer-conf--11066.c:4:20: fatal error: libnut.h: No such file or directory
+ #include <libnut.h>
+                    ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for mencoder ============
+Result is: no 
+##########################################
+
+============ Checking for fastmemcpy ============
+Result is: yes 
+##########################################
+
+============ Checking for UniquE RAR File Library ============
+Result is: yes 
+##########################################
+
+============ Checking for TV interface ============
+Result is: no 
+##########################################
+
+============ Checking for Video 4 Linux TV interface ============
+Result is: no 
+##########################################
+
+============ Checking for Video 4 Linux 2 TV interface ============
+Result is: no 
+##########################################
+
+============ Checking for TV teletext interface ============
+Result is: no 
+##########################################
+
+============ Checking for Radio interface ============
+Result is: no 
+##########################################
+
+============ Checking for Capture for Radio interface ============
+Result is: no 
+##########################################
+
+============ Checking for Video 4 Linux 2 Radio interface ============
+Result is: no 
+##########################################
+
+============ Checking for Video 4 Linux Radio interface ============
+Result is: no 
+##########################################
+
+============ Checking for Video 4 Linux 2 MPEG PVR interface ============
+Result is: no 
+##########################################
+
+============ Checking for audio select() ============
+Result is: yes 
+##########################################
+
+============ Checking for ftp ============
+Result is: yes 
+##########################################
+
+============ Checking for vstream client ============
+
+#include <vstream-client.h>
+void vstream_error(const char *format, ... ) {}
+int main(void) { vstream_start(); return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -lvstream-client
+/tmp/mplayer-conf--11066.c:1:28: fatal error: vstream-client.h: No such file or directory
+ #include <vstream-client.h>
+                            ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for byte order ============
+
+short ascii_name[] = { (('M'<<8)|'P'),(('l'<<8)|'a'),(('y'<<8)|'e'),(('r'<<8)|'B'),
+                      (('i'<<8)|'g'),(('E'<<8)|'n'),(('d'<<8)|'i'),(('a'<<8)|'n'),0};
+int main(){
+  return (int)ascii_name;
+} 
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+
+
+Result is: little-endian 
+##########################################
+
+============ Checking for OSD menu ============
+Result is: no 
+##########################################
+
+============ Checking for Subtitles sorting ============
+Result is: yes 
+##########################################
+
+============ Checking for XMMS inputplugin support ============
+Result is: no 
+##########################################
+
+============ Checking for inet6 ============
+
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+int main(void) { struct sockaddr_in6 six; socket(AF_INET6, SOCK_STREAM, AF_INET6); }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/mplayer-conf--11066.c: In function 'main':
+/tmp/mplayer-conf--11066.c:4:38: warning: unused variable 'six' [-Wunused-variable]
+ int main(void) { struct sockaddr_in6 six; socket(AF_INET6, SOCK_STREAM, AF_INET6); }
+                                      ^
+/tmp/mplayer-conf--11066.c:4:25: warning: control reaches end of non-void function [-Wreturn-type]
+ int main(void) { struct sockaddr_in6 six; socket(AF_INET6, SOCK_STREAM, AF_INET6); }
+                         ^
+
+
+Result is: yes 
+##########################################
+
+============ Checking for gethostbyname2 ============
+
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netdb.h>
+int main(void) { gethostbyname2("", AF_INET); }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c
+/tmp/mplayer-conf--11066.c: In function 'main':
+/tmp/mplayer-conf--11066.c:4:1: warning: control reaches end of non-void function [-Wreturn-type]
+ int main(void) { gethostbyname2("", AF_INET); }
+ ^
+
+
+Result is: yes 
+##########################################
+
+============ Checking for GUI ============
+============ Checking for automatic gdb attach ============
+Result is: no 
+##########################################
+
+============ Checking for compiler support for noexecstack ============
+
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static     -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -Wl,-z,noexecstack
+
+
+Result is: yes 
+##########################################
+
+============ Checking for joystick ============
+Result is: no 
+##########################################
+
+============ Checking for lirc ============
+
+#include <lirc/lirc_client.h>
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static -Wl,-z,noexecstack        -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -llirc_client
+/tmp/mplayer-conf--11066.c:1:30: fatal error: lirc/lirc_client.h: No such file or directory
+ #include <lirc/lirc_client.h>
+                              ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for lircc ============
+
+#include <lirc/lircc.h>
+int main(void) { return 0; }
+
+mipsel-openwrt-linux-gcc -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer   -static -Wl,-z,noexecstack        -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -llircc
+/tmp/mplayer-conf--11066.c:1:24: fatal error: lirc/lircc.h: No such file or directory
+ #include <lirc/lircc.h>
+                        ^
+compilation terminated.
+
+
+Result is: no 
+##########################################
+
+============ Checking for color console output ============
+Result is: no 
+##########################################
+
+
+int main() { return 0; }
+
+mipsel-openwrt-linux-gcc -I. -I.. -I../libavutil -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer -D_REENTRANT -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAVE_CONFIG_H   -static -Wl,-z,noexecstack        -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -Wdeclaration-after-statement
+
+
+
+int main() { return 0; }
+
+mipsel-openwrt-linux-gcc -Wdeclaration-after-statement -I. -I.. -I../libavutil -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer -D_REENTRANT -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAVE_CONFIG_H   -static -Wl,-z,noexecstack        -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -Wno-pointer-sign
+
+
+
+int main() { return 0; }
+
+mipsel-openwrt-linux-gcc -Wno-pointer-sign -Wdeclaration-after-statement -I. -I.. -I../libavutil -Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4   -pipe -ffast-math -fomit-frame-pointer -D_REENTRANT -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAVE_CONFIG_H   -static -Wl,-z,noexecstack        -o /tmp/mplayer-conf--11066 /tmp/mplayer-conf--11066.c -Wdisabled-optimization
+
+
+============ Checking for DVD support (libdvdnav) ============
+./configure: 7501: ./configure: dvdnav-config: not found
+Result is: no 
+##########################################
+
